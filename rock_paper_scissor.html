@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Rock-pap-Scissor</title>
+<style>
+    .ro{
+        background-color: brown;
+        color:white;
+        border:1px,solid,black;
+        border-width: 6px;
+        height: 100px;
+        width: 240px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-weight:bolder;
+        font-size: xx-large;
+        margin-left: 10px;
+        margin-right: 30px;
+        margin-top: 10px;
+    }
+    .pap{
+ background-color: rgb(35, 74, 202);
+        color:black;
+        border: 1px,solid,black;
+        border-width: 6px;
+        height: 100px;
+        width: 240px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-weight:bolder;
+        font-size: xx-large;
+        margin-left: 10px;
+        margin-right: 30px;
+        margin-top: 10px;
+    }
+
+    .sci{
+ background-color: rgb(177, 202, 35);
+        color:black;
+        border: 1px,solid,black;
+        border-width: 6px;
+        height: 100px;
+        width: 240px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-weight:bolder;
+        font-size: xx-large;
+        margin-left: 10px;
+        margin-right: 30px;
+        margin-top: 10px;
+    }
+</style>
+    </head>
+    <body>
+        <button class="ro" onclick="playinggame('rock')">Rock</button>  
+        <button class="pap" onclick="playinggame('paper')">Paper</button>
+        <button class="sci" onclick="playinggame('scissors')">Scissor</button>
+    <script>
+        function computermove()
+        {
+             let computerMove='';
+            const randomno=Math.random();
+            if(randomno<1/3)
+        {return 'rock';
+        }
+        else if(randomno<2/3)
+        {
+            return 'paper';
+        }
+        else{
+            return 'scissors';
+        }}
+    function playinggame(playermove)
+    {const computermo=computermove();
+        if(playermove=='rock')
+        {
+            if(computermo=='rock')
+        {
+            result=`It's a draw`;
+        }
+            else if(computermo=='paper')
+        {
+            result='you lost!!!';
+        }
+        else if(computermo=='scissors')
+        {
+            result='you Won!!';
+        }
+        }  
+        else if(playermove=='paper')
+            {
+        if(computermo=='paper')
+        {
+            result='its tiee!';
+        }
+        else if(computermo=='rock')
+            {
+                result='you Won!!';
+            }
+        else if(computermo=='scissors')
+                {
+                    result='you lost!!';
+                }    }
+            
+        else if(playermove=='scissors')
+        {if(computermo=='scissors')
+           { result=`It's a Tie`;
+        }
+        else if(computermo=='rock')
+        {
+            result='you lost!!';
+        }
+        else if(computermo=='paper')
+        {
+            result='You Win!!';
+        }
+    }
+    const msg=`you picked ${playermove}.  your friend computer picked ${computermo}. SOoooo ${result}`;
+    alert(msg);}
+    </script>
+     </body>
+</html>
