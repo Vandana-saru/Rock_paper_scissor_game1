@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="todolist.css" >
+    </head>
+    <body>
+        <p>Todo List</p>
+        
+       <div class ="inp1" >
+        <input class ="inp" placeholder="Todo name">
+        <input  type="date" class="duedate">
+        <button class="add" onclick="adding()">Add</button>
+       </div>
+        <div class="forjsinput"></div>
+        <script>
+          function listing()
+          {
+            let tohtml='';
+for(let i=0;i<todoList.length;i++)
+{const to=todoList[i];
+    const html= `<div>${to.name}</div>
+      <div> ${to.date}</div>   <button class="dlete" onclick="todoList.splice(${i},1);  listing();">Delete</button>`;
+    tohtml+=html;}
+document.querySelector('.forjsinput').innerHTML=tohtml;
+   
+
+          }
+
+const todoList=[];
+
+function adding()
+{
+const todo=document.querySelector('.inp');
+const name=todo.value; 
+const duedate=document.querySelector('.duedate');
+const date=duedate.value;
+todoList.push({name,date});
+todo.value='';
+duedate.value='';
+listing();
+//rendertodoList();}
+}
+
+   </script>
+    </body>
+
+</html>
